@@ -1,0 +1,14 @@
+/**index.wxss**/
+.header {
+  height: 20%;
+}
+
+.content {
+  height: 80%;
+}
+
+.footer {
+  padding: 5px 0;
+  color: white;
+  background-color: #E91E63;
+}

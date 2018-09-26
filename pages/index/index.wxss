@@ -1,0 +1,37 @@
+/* pages/index/index.wxss */
+.lanuch {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  display:flex;
+  flex-direction:column;
+  /* align-items:center;
+  justify-content: center; */
+}
+
+.lanuch-img{
+  height: 100%;
+}
+
+.lanuch-button{
+  width: 100%;
+  position: fixed;
+  bottom: 50px;
+  z-index: 1;
+}
+
+image {
+width:100%;
+height:100%;
+display:inline-block;
+overflow:hidden;
+}
+
+.btn-out-line {
+  line-height: 60px;
+  height: 60px;
+  width: 80%;
+  color: #fff;
+  background: transparent !important;
+  border: 1px solid #fff !important;
+}

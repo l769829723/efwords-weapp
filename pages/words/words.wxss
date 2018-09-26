@@ -1,0 +1,5 @@
+/* pages/words/words.wxss */
+.modal-body-text {
+  text-align: left;
+  padding: 0 10px;
+}

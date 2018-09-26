@@ -1,0 +1,29 @@
+page {
+-webkit-user-select:none;
+user-select:none;
+width:100%;
+overflow-x:hidden;
+height:100%;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  margin-top: 2%;
+  background-color: #fff;
+}
+
+.footer {
+  padding: 20px 0;
+  font-size: 0.8em;
+  color: #eee;
+}
+
+.starts_up {
+  height: 100%;
+}
+
+.primary {
+  color: #fff;
+  background-color: #E91E63!important;
+}

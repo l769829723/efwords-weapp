@@ -1,0 +1,40 @@
+<!--pages/words/words.wxml-->
+<view class="container">
+  <i-row>
+    <i-col span="24" i-class="header">
+      <i-modal title="单词详情" visible="{{wordModal}}" actions="{{wordModalActions}}" bind:click="closeModal">
+        <view class="modal-body-text">
+          <text>单词：{{wordModalData.WordText + '\n'}}</text>
+          <text>词性：{{wordModalData.POS + '\n'}}</text>
+          <text>音标：{{wordModalData.Pronunciation + '\n'}}</text>
+          <text>含义：{{wordModalData.Translation + '\n'}}</text>
+          <text wx:if="{{wordModalData.example.length}}">例句：</text>
+          <text
+            wx:for="{{wordModalData.example}}"
+            wx:for-item="example"
+            wx:for-index="index"
+            wx:key="index"
+          >
+          <text>{{'\n' + (index + 1)}}. {{example}}</text>
+          </text>
+        </view>
+      </i-modal>
+      <view wx:if="{{words.length}}">
+        <i-panel title="单词列表，点击可以查看更多详情：">
+          <scroll-view>
+            <i-cell-group>
+              <view
+                wx:for="{{words}}"
+                wx:for-index="index"
+                wx:for-item="item"
+                wx:key="index">
+                <i-cell data-word="{{item}}" bind:click="showDetail" title="{{item.WordText}}" label="{{item.Pronunciation}}" value="{{item.POS}}">
+                </i-cell>
+              </view>
+            </i-cell-group>
+          </scroll-view>
+        </i-panel>
+      </view>
+    </i-col>
+  </i-row>
+</view>

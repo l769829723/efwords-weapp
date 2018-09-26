@@ -1,0 +1,71 @@
+<!--pages/practice/category/category.wxml-->
+<i-panel hide-border>
+    <view>
+      <i-row>
+        <i-tabs color="#E91E63" current="{{ current }}" bindchange="handleChange">
+          <i-tab
+            wx:for="{{tabs}}"
+            wx:for-index="index"
+            wx:for-item="item"
+            wx:key="{{index}}"
+            key="{{index}}"
+            title="{{item}}"
+          ></i-tab>
+        </i-tabs>
+      </i-row>
+    </view>
+    <view style="padding: 0 60px;">
+      <i-cell-group>
+        <i-cell
+          wx:for="{{options}}"
+          wx:for-index="optionsIndex"
+          wx:for-item="optionsItem"
+          wx:key="{{optionsIndex}}"
+          title="{{optionsItem.name}}"
+          bind:click="handleSelect"
+          data-item="{{optionsItem}}"
+        ></i-cell>
+      </i-cell-group>
+    </view>
+</i-panel>
+
+<view wx:if="{{game.word}}" style="margin: 15px 0">
+  <i-row>
+    <i-col span="18" offset="3">
+      <i-panel title="{{game.word.Translation}} {{game.word.POS}}">
+        <view style="padding: 10px 20px">
+          <input bindblur="setWordInput" value="{{game.input}}" placeholder="输入正确的单词" auto-focus/>
+        </view>
+        <view style="padding: 15px 0"></view>
+        <i-row>
+          <i-col span="8">
+            <i-button
+              bind:click="handleRefreshWords"
+              type="default"
+              long="true"
+            >换一个</i-button>
+          </i-col>
+          <i-col span="16">
+            <i-button
+              bind:click="handleCheck"
+              type="ghost"
+              long="true"
+            >确认</i-button>
+          </i-col>
+        </i-row>
+      </i-panel>
+    </i-col>
+  </i-row>
+</view>
+
+<view wx:if="{{game.persent}}">
+  <i-row>
+    <i-col span="18" offset="3">
+      <i-panel title="当前进度 {{game.processed}}/{{count}}">
+        <view style="padding: 15px;">
+          <progress activeColor="#E91E63" percent="{{game.persent}}" stroke-width="12" show-info />
+        </view>
+      </i-panel>
+    </i-col>
+  </i-row>
+</view>

@@ -1,0 +1,21 @@
+<!--pages/index/index.wxml-->
+<view class="lanuch">
+  <image
+    mode="aspectFill"
+    class='lanuch-image'
+    src="/resources/images/background.png"
+  ></image>
+  <view class="lanuch-button">
+  <button
+      bindtap="handleClick"
+      class="btn-out-line">
+      开  始
+    </button>
+    <view style="padding: 5px 0"></view>
+    <button
+      bindtap="handlePractice"
+      class="btn-out-line">
+      填 词 练  习
+    </button>
+  </view>
+</view>

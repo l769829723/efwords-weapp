@@ -1,0 +1,16 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/levels/levels",
+    "pages/units/units",
+    "pages/logs/logs",
+    "pages/words/words",
+    "pages/practice/category/category"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#E91E63",
+    "navigationBarTitleText": "EFWords",
+    "navigationBarTextStyle": "#fff"
+  }
+}

@@ -1,0 +1,58 @@
+<!--index.wxml-->
+<view class="container">
+  <i-row wx:if="{{history.show}}">
+    <i-col span="24" i-class="header">
+      <i-panel title="上次看到：">
+        <i-cell-group>
+          <i-cell
+            title="第{{history.level}}级 第{{history.unit}}单元" 
+            is-link
+            value="继续"
+            label="点击继续可以直接跳转到上次看的地方"
+            url="/pages/words/words?level={{history.level}}&unit={{history.unit}}"
+          ></i-cell>
+        </i-cell-group>
+      </i-panel>
+    </i-col>
+  </i-row>
+  <i-row>
+    <i-col span="24" i-class="header">
+      <i-panel title="选择等级：">
+        <view style="padding: 15px;">
+          <i-cell-group>
+            <view
+              wx:for="{{levelsAndUnits}}"
+              wx:for-index="index"
+              wx:for-item="item"
+              wx:key="{{index}}">
+              <i-cell
+                title="第{{item.LevelName}}"
+                label="{{item.descript}}"
+                is-link
+                link-type="navigateTo"
+                url="/pages/units/units?level={{item.LevelNo}}"
+              ></i-cell>
+            </view>
+          </i-cell-group>
+        </view>
+      </i-panel>
+    </i-col>
+  </i-row>
+  <i-row>
+    <i-col span="24">
+      <view class='footer'>
+        <i-row>
+          <i-col span="18" offset="3">
+            <label>
+              <i-icon type="mail_fill" />
+              Email: 1054473703@qq.com
+            </label>
+            <text>
+              Copyright @ 2018 EFWords reserved.
+            </text>
+          </i-col>
+        </i-row>
+      </view>
+    </i-col>
+  </i-row>
+</view>
